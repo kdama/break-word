@@ -18,9 +18,19 @@
       .wordWrapBreakWord {
         word-wrap: break-word;
       }
+      .hyphenate {
+        hyphens: auto;
+      }
     </style>
   </head>
   <body>
+    <h1>vanilla</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
+      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
+      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
+      maiores nisi.
+    </p>
     <h1>word-break: break-word;</h1>
     <p class="wordBreakBreakWord">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
@@ -37,6 +47,34 @@
     </p>
     <h1>word-wrap: break-word;</h1>
     <p class="wordWrapBreakWord">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
+      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
+      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
+      maiores nisi.
+    </p>
+    <h1>hyphens: auto;</h1>
+    <p class="hyphenate">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
+      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
+      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
+      maiores nisi.
+    </p>
+    <h1>word-break: break-word; hyphens: auto;</h1>
+    <p class="wordBreakBreakWord hyphenate">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
+      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
+      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
+      maiores nisi.
+    </p>
+    <h1>word-break: break-all; hyphens: auto;</h1>
+    <p class="wordBreakBreakAll hyphenate">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
+      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
+      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
+      maiores nisi.
+    </p>
+    <h1>word-wrap: break-word; hyphens: auto;</h1>
+    <p class="wordWrapBreakWord hyphenate">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
       nostrum id minus autem ad vitae corrupti accusamus tempore eos,
       necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
