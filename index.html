@@ -24,61 +24,46 @@
     </style>
   </head>
   <body>
-    <h1>vanilla</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
-      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
-      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
-      maiores nisi.
+    <p id="target" lang="en-us">
+      The longest word in any of the major English language dictionaries is
+      pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a
+      lung disease contracted from the inhalation of very fine silica particles,
+      specifically from a volcano; medically, it is the same as silicosis.
+      &mdash; Wikipedia
     </p>
-    <h1>word-break: break-word;</h1>
-    <p class="wordBreakBreakWord">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
-      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
-      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
-      maiores nisi.
-    </p>
-    <h1>word-break: break-all;</h1>
-    <p class="wordBreakBreakAll">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
-      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
-      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
-      maiores nisi.
-    </p>
-    <h1>word-wrap: break-word;</h1>
-    <p class="wordWrapBreakWord">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
-      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
-      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
-      maiores nisi.
-    </p>
-    <h1>hyphens: auto;</h1>
-    <p class="hyphenate">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
-      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
-      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
-      maiores nisi.
-    </p>
-    <h1>word-break: break-word; hyphens: auto;</h1>
-    <p class="wordBreakBreakWord hyphenate">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
-      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
-      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
-      maiores nisi.
-    </p>
-    <h1>word-break: break-all; hyphens: auto;</h1>
-    <p class="wordBreakBreakAll hyphenate">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
-      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
-      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
-      maiores nisi.
-    </p>
-    <h1>word-wrap: break-word; hyphens: auto;</h1>
-    <p class="wordWrapBreakWord hyphenate">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores totam
-      nostrum id minus autem ad vitae corrupti accusamus tempore eos,
-      necessitatibus error tempora adipisci commodi repudiandae dolorum. Totam,
-      maiores nisi.
-    </p>
+    <div>
+      <select id="wordWrap">
+        <option>-</option>
+        <option value="wordBreakBreakAll">word-break: break-all;</option>
+        <option value="wordBreakBreakWord">word-wrap: break-word;</option>
+      </select>
+      <select id="hyphens">
+        <option>-</option>
+        <option value="hyphenate">hyphens: auto;</option>
+      </select>
+        <option>-</option>
+        <option value="hyphenopoly">Hyphenopoly's soft hyphen (not yet)</option>
+      </select>
+    </div>
+    <script>
+      var state = {
+        wordWrap: undefined,
+        hyphens: undefined,
+        softHyphens: undefined
+      };
+      function applyStyles() {
+        document.getElementById("target").className = [
+          state.wordWrap,
+          state.hyphens,
+          state.softHyphens
+        ].join(" ");
+      }
+      Object.keys(state).forEach(function(key) {
+        document.getElementById(key).onchange = function(event) {
+          state[key] = event.target.value;
+          applyStyles();
+        };
+      });
+    </script>
   </body>
 </html>
